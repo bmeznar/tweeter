@@ -20,7 +20,10 @@ if (!empty($name) && !empty($email)
             . "VALUES (?,?,?,?,?)";
     $stmt = $pdo->prepare($query);
     $stmt->execute([$username,$name,$email,$birthday,$pass]);
-
+    session_start();
+    $_SESSION['username']=$username;
+    $_SESSION['email']=$email;
+    $_SESSION['name']=$name;
     header("Location: index.php");
 }
 else {
