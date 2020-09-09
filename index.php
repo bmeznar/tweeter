@@ -1,9 +1,19 @@
-<?php
-    session_start();
-    if(isset($_SESSION['username'])){
-      //include stran s posti
-    }
-    else{
-      header('Location:login.php');
-    }
- ?>
+<!DOCTYPE html>
+<html lang="sl" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Twetter</title>
+  </head>
+  <body>
+    <?php
+        session_start();
+        if(isset($_SESSION['username'])){
+          include 'menu.php';
+          //include stran s posti
+        }
+        else{
+          header('Location:login.php');
+        }
+     ?>
+  </body>
+</html>
