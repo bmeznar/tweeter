@@ -15,6 +15,7 @@
         $_SESSION['email']=$row['email'];
         $_SESSION['avatar']=$row['avatar'];
         $_SESSION['name']=$row['name'];
+        $_SESSION['id']=$row['id'];
         header("Location:index.php");
         die();
         }

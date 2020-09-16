@@ -9,6 +9,7 @@
         session_start();
         if(isset($_SESSION['username'])){
           include 'header.php';
+          include 'addpost.php';
           include 'posts.php';
           //include stran s posti
         }

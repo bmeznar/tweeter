@@ -6,7 +6,7 @@
     echo "<div class='posts' style='border:1px solid black'>";
     echo "<h3 class='name'>".$row['name']."</h3>";
     echo "<h5 class='username'>".$row['username']."</h4>";
-    echo "<h5 class='date'>".date('d-m-Y H:i',strtotime($row['post_date']))."</h5><br>";
+    echo "<h5 class='date'>".date('d-m-Y H:i',strtotime($row['date']))."</h5><br>";
     echo "<p class='description'>".$row['description']."</p>";
     echo "</div><br>";
   }
