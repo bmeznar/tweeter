@@ -8,7 +8,8 @@
     <?php
         session_start();
         if(isset($_SESSION['username'])){
-          include 'menu.php';
+          include 'header.php';
+          include 'posts.php';
           //include stran s posti
         }
         else{

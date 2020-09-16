@@ -3,3 +3,4 @@
 <a href="messages.php">Messages</a>
 <a href="pinned.php">Pinned</a>
 <a href="profile.php">Profile</a>
+<a href="profile.php">Log Out</a>
