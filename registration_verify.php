@@ -12,19 +12,27 @@ if (!empty($name) && !empty($email)
         && !empty($birthday) && !empty($username)
         && !empty($pass1)
         && ($pass1 == $pass2)) {
+    $st=0;
+    $result = $pdo->prepare("SELECT * FROM `users` WHERE `username`=? OR `email`=?");
+    $result->execute(array($username,$email));
+    foreach($result as $row) {
+      $st++;
+    }
+    if($st==0){
+      $pass = password_hash($pass1, PASSWORD_DEFAULT);
 
-    $pass = password_hash($pass1, PASSWORD_DEFAULT);
-
-    $query = "INSERT INTO users (username,name,email,birthday,"
-            . "password) "
-            . "VALUES (?,?,?,?,?)";
-    $stmt = $pdo->prepare($query);
-    $stmt->execute([$username,$name,$email,$birthday,$pass]);
-    session_start();
-    $_SESSION['username']=$username;
-    $_SESSION['email']=$email;
-    $_SESSION['name']=$name;
-    header("Location: index.php");
+      $query = "INSERT INTO users (username,name,email,birthday,password) VALUES (?,?,?,?,?)";
+      $stmt = $pdo->prepare($query);
+      $stmt->execute([$username,$name,$email,$birthday,$pass]);
+      session_start();
+      $_SESSION['username']=$username;
+      $_SESSION['email']=$email;
+      $_SESSION['name']=$name;
+      header("Location: index.php");
+    }
+    else{
+      header("Location: registration.php");
+    }
 }
 else {
     header("Location: registration.php");
