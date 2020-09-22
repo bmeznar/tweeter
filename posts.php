@@ -1,6 +1,6 @@
 <?php
   include 'sql.php';
-  $stmt = $pdo->query("SELECT * FROM posts AS p INNER JOIN users AS u ON u.id=p.user_id");
+  $stmt = $pdo->query("SELECT * FROM posts AS p INNER JOIN users AS u ON u.id=p.user_id ORDER BY date DESC");
   $stmt->execute();
   while ($row = $stmt->fetch()) {
     echo "<div class='posts' style='border:1px solid black'>";
