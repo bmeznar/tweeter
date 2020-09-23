@@ -18,6 +18,7 @@
           echo $row['bio']."<br>";
           $date = strtotime($row['birthday']);
           echo "Birthday: ".date('d/m/Y',$date)."<br>";
+          echo "<a href='profile_settings.php'>Profile Settings</a>";
         }
         $stmt = $pdo->query("SELECT u.name AS name,u.username AS username,p.date AS pdate,p.description AS description, p.id AS id  FROM posts AS p INNER JOIN users AS u ON u.id=p.user_id WHERE p.user_id=$id ORDER BY date DESC");
         $stmt->execute();
