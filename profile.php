@@ -17,10 +17,22 @@
           echo $row['bio']."<br>";
           $date = strtotime($row['birthday']);
           echo "Birthday: ".date('d/m/Y',$date)."<br>";
-          echo "<form method='post'><input type='hidden' value='$id' name='id'>";
-          echo "<br><button type='submit' formaction='follow_verify.php'>Follow</button></form><br>";
+          $stmt = $pdo->query("SELECT * FROM following WHERE follower_id=$id");
+          $stmt->execute();
+          $st=0;
+          while ($row = $stmt->fetch()){
+              $st++;
+          }
+          if($st==0){
+            echo "<form method='post'><input type='hidden' value='$id' name='id'>";
+            echo "<br><button type='submit' formaction='follow_verify.php'>Follow</button></form><br>";
+          }
+          else{
+            echo "<form method='post'><input type='hidden' value='$id' name='id'>";
+            echo "<br><button type='submit' formaction='unfollow_verify.php'>Unfollow</button></form><br>";
+          }
         }
-        $stmt = $pdo->query("SELECT * FROM posts AS p INNER JOIN users AS u WHERE p.user_id=$id ORDER BY date DESC");
+        $stmt = $pdo->query("SELECT * FROM posts AS p INNER JOIN users AS u ON u.id=p.user_id WHERE p.user_id=$id ORDER BY date DESC");
         $stmt->execute();
         while ($row = $stmt->fetch()) {
           echo "<div class='posts' style='border:1px solid black'>";
