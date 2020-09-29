@@ -28,6 +28,10 @@ if (!empty($name) && !empty($email)
       $_SESSION['username']=$username;
       $_SESSION['email']=$email;
       $_SESSION['name']=$name;
+      $lastId = $pdo->lastInsertId();
+      $query = "INSERT INTO following (user_id,follower_id) VALUES (?,?)";
+      $stmt = $pdo->prepare($query);
+      $stmt->execute([$lastId,$lastId]);
       header("Location: index.php");
     }
     else{
