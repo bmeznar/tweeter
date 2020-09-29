@@ -14,13 +14,14 @@
        <br>
      </div>
      <?php
+     session_start();
      if(isset($_POST['search'])){
        include 'sql.php';
        $search="%".$_POST['search']."%";
-      $result = $pdo->prepare("SELECT * FROM `users` WHERE `name` LIKE ? OR `username` LIKE ?");
-      $result->execute(array($search,$search));
+      $result = $pdo->prepare("SELECT * FROM `users` WHERE (`name` LIKE ? OR `username` LIKE ?) AND id!=?");
+      $result->execute(array($search,$search,$_SESSION['id']));
       foreach($result as $row) {
-        echo $row['name']." ".$row['username']." <a href='profile.php?id=".$row['id']."'>Show profile</a>";
+        echo $row['name']." @".$row['username']." <a href='profile.php?id=".$row['id']."'>Show profile</a><br>";
       }
      }
       ?>
