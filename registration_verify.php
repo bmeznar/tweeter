@@ -30,6 +30,7 @@ if (!empty($name) && !empty($email)
       $_SESSION['name']=$name;
       $lastId = $pdo->lastInsertId();
       $_SESSION['id']=$lastId;
+      $_SESSION['avatar']='uploads/default_profile.png';
       $query = "INSERT INTO following (user_id,follower_id) VALUES (?,?)";
       $stmt = $pdo->prepare($query);
       $stmt->execute([$lastId,$lastId]);

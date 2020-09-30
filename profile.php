@@ -7,7 +7,7 @@
   <body>
     <?php include 'header.php';
         include 'sql.php';
-        session_start();
+        //session_start();
         echo "<div class='profile'>";
         $id=$_GET['id'];
         $stmt = $pdo->query("SELECT * FROM users WHERE id=$id");
