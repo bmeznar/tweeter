@@ -7,6 +7,7 @@
   <body>
     <?php include 'header.php';
         include 'sql.php';
+        session_start();
         echo "<div class='profile'>";
         $id=$_GET['id'];
         $stmt = $pdo->query("SELECT * FROM users WHERE id=$id");
@@ -17,11 +18,12 @@
           echo $row['bio']."<br>";
           $date = strtotime($row['birthday']);
           echo "Birthday: ".date('d/m/Y',$date)."<br>";
-          $stmt = $pdo->query("SELECT * FROM following WHERE follower_id=$id");
-          $stmt->execute();
           $st=0;
-          while ($row = $stmt->fetch()){
-              $st++;
+          $stmt = $pdo->prepare("SELECT * FROM following WHERE follower_id=:follower AND user_id=:user");
+          $stmt->execute(['follower' => $id, 'user' => $_SESSION['id']]);
+          $data = $stmt->fetchAll();
+          foreach ($data as $row) {
+            $st++;
           }
           if($st==0){
             echo "<form method='post'><input type='hidden' value='$id' name='id'>";
