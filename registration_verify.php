@@ -29,6 +29,7 @@ if (!empty($name) && !empty($email)
       $_SESSION['email']=$email;
       $_SESSION['name']=$name;
       $lastId = $pdo->lastInsertId();
+      $_SESSION['id']=$lastId;
       $query = "INSERT INTO following (user_id,follower_id) VALUES (?,?)";
       $stmt = $pdo->prepare($query);
       $stmt->execute([$lastId,$lastId]);

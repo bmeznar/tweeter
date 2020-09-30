@@ -7,9 +7,9 @@
   <body>
     <?php
     include 'header.php';
-    include'sql.php';
+    include 'sql.php';
     $post_id=$_GET['id'];
-    $stmt = $pdo->prepare("SELECT u.name AS name, u.username AS username,u.id AS user_id, p.date AS pdate, p.description AS description, i.url AS url, COUNT(l.id) AS likes FROM posts AS p INNER JOIN users AS u ON u.id=p.user_id
+    $stmt = $pdo->prepare("SELECT u.name AS name, u.username AS username,u.id AS user_id, p.date AS pdate, p.description AS description, i.url AS url, COUNT(l.id) AS likes, p.id AS id FROM posts AS p INNER JOIN users AS u ON u.id=p.user_id
     LEFT JOIN images AS i ON i.post_id=p.id LEFT JOIN likes AS l ON l.post_id=p.id WHERE p.id=:id");
     $stmt->execute(['id'=>$post_id]);
     $data = $stmt->fetchAll();
@@ -31,17 +31,19 @@
         echo "<p class='description'>".$row['description']."</p>";
         echo "<p class='bottom_bar'><a href='like.php'>Like</a>".$row['likes']."</p></div>";
       }
-    }?>
-    <form class="" action="addcomment_verify.php" method="post">
-      <input type="text" name="comment" value=""><br>
-      <input type="submit" name="submit" value="Add Comment">
-    </form>
-    <?php
-    $stmt = $pdo->prepare("SELECT c.text AS text, u.username AS username,u.name AS name FROM comments AS c INNER JOIN users AS u ON u.id=c.user_id  WHERE c.post_id=:id");
+    }
+    echo "<form class='' action='addcomment_verify.php' method='post'>
+      <input type='text' name='comment' value='' required placeholder='Your Comment'><br>
+      <input type='hidden' name='post_id' value=".$row['id'].">
+      <input type='submit' name='submit' value='Add Comment'>
+    </form>";
+    $stmt = $pdo->prepare("SELECT c.text AS text, u.username AS username,u.name AS name, u.id AS id FROM comments AS c INNER JOIN users AS u ON u.id=c.user_id  WHERE c.post_id=:id");
     $stmt->execute(['id'=>$post_id]);
     $data = $stmt->fetchAll();
     foreach ($data as $row){
-
+        echo "<div class='comment'>";
+        echo "<p>".$row['name']." <a href='profile.php?id=".$row['id']."'>@".$row['username']."</a></p>";
+        echo $row['text']."</div>";
     }
     ?>
   </body>
