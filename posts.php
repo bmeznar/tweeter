@@ -20,7 +20,7 @@
       echo "<a href='post_display.php?id=".$row['pid']."'>More</a>".$row['pid'];
       echo "<p class='description'>".$row['description']."</p>";
       echo "<div class='post_img'><img src='".$row['url']."' alt='image'></div>";
-      echo "<p class='bottom_bar'>";
+      echo "<div class='bottom_bar'>";
       //like button
       include 'sql2.php';
       $stmt = $pdo2->prepare("SELECT * FROM likes WHERE user_id=:user_id AND post_id=:post_id");
@@ -41,7 +41,9 @@
         echo "<br><button type='submit' formaction='like_verify.php'>Like</button>".$num_likes."</form>";
       }
       //comment button
-      echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal-".$i."'>Comments</button></p></div>";
+      echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal-".$i."'>Comments</button>";
+      //comment modal
+      
       echo "<div class='modal' id='myModal-".$i."'>";
       echo "<div class='modal-dialog'>";
       echo "<div class='modal-content'>";
@@ -57,7 +59,30 @@
       echo "<div class='modal-footer'>";
       echo "<button type='button' class='btn btn-danger' data-dismiss='modal'>Close</button>";
       echo "</div></div></div></div>";
+      //retweet
+      include 'sql2.php';
+      $stmt = $pdo2->prepare("SELECT * FROM retweet WHERE user_id=:user_id AND post_id=:post_id");
+      $stmt->execute(['user_id'=>$_SESSION['id'],'post_id'=>$post_id]);
+      $data = $stmt->fetchAll();
+      $retweet=0;
+      foreach ($data as $row) {
+        $retweet++;
+      }
+        if($retweet>0){
+        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<input type='hidden' value=".$i." name='post'>";
+        echo "<br><button type='submit' formaction='undo_retweet_verify.php'>Undo Retweet</button></form>";
+      }
+      else{
+        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<input type='hidden' value=".$i." name='post'>";
+        echo "<br><button type='submit' formaction='retweet_verify.php'>Retweet</button></form>";
+      }
+      //pin
+
+      echo "</div></div>";
     }
+
     else{
       echo "<div class='posts' style='border:1px solid black'>";
       echo "<a id='post".$i."'></a>";
@@ -66,7 +91,7 @@
       echo "<h5 class='date'>".date('d-m-Y H:i',strtotime($row['pdate']))."</h5>";
       echo "<a href='post_display.php?id=".$row['pid']."'>More</a>";
       echo "<p class='description'>".$row['description']."</p>";
-      echo "<p class='bottom_bar'>";
+      echo "<div class='bottom_bar'>";
       //like button
       include 'sql2.php';
       $stmt = $pdo2->prepare("SELECT * FROM likes WHERE user_id=:user_id AND post_id=:post_id");
@@ -87,7 +112,9 @@
         echo "<br><button type='submit' formaction='like_verify.php'>Like</button>".$num_likes."</form>";
       }
       //comment button
-      echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal-".$i."'>Comments</button></p></div>";
+      echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal-".$i."'>Comments</button>";
+      //comment modal
+
       echo "<div class='modal' id='myModal-".$i."'>";
       echo "<div class='modal-dialog'>";
       echo "<div class='modal-content'>";
@@ -102,7 +129,29 @@
       echo "</div>";
       echo "<div class='modal-footer'>";
       echo "<button type='button' class='btn btn-danger' data-dismiss='modal'>Close</button>";
-      echo "</div></div></div></div></p></div>";
+      echo "</div></div></div></div>";
+      //retweet
+      include 'sql2.php';
+      $stmt = $pdo2->prepare("SELECT * FROM retweet WHERE user_id=:user_id AND post_id=:post_id");
+      $stmt->execute(['user_id'=>$_SESSION['id'],'post_id'=>$post_id]);
+      $data = $stmt->fetchAll();
+      $retweet=0;
+      foreach ($data as $row) {
+        $retweet++;
+      }
+        if($retweet>0){
+        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<input type='hidden' value=".$i." name='post'>";
+        echo "<br><button type='submit' formaction='undo_retweet_verify.php'>Undo Retweet</button></form>";
+      }
+      else{
+        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<input type='hidden' value=".$i." name='post'>";
+        echo "<br><button type='submit' formaction='retweet_verify.php'>Retweet</button></form>";
+      }
+      //pin
+
+      echo "</div></div>";
     }
     $i++;
   }

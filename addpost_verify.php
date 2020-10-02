@@ -2,7 +2,7 @@
   session_start();
   include 'sql.php';
 
-  if(isset($_FILES['slika'])){
+  if(isset($_POST['slika'])){
     $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["slika"]["name"]);
     $uploadOk = 1;
