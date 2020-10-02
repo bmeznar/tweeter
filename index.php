@@ -12,6 +12,7 @@
           include 'header.php';
           include 'addpost.php';
           include 'posts.php';
+          include 'random_people.php';
         }
         else{
           header('Location:login.php');
