@@ -2,7 +2,9 @@
  <html lang="en" dir="ltr">
    <head>
      <meta charset="utf-8">
-     <title></title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Birdie</title>
+     <link rel="stylesheet" href="/css/index.css">
    </head>
    <body>
      <?php include 'header.php'; ?>

@@ -20,7 +20,7 @@
       echo "<h5 class='date'>".date('d-m-Y H:i',strtotime($row['pdate']))."</h5>";
       echo "<a href='post_display.php?id=".$row['pid']."'>More</a>";
       echo "<p class='description'>".$row['description']."</p>";
-      echo "<div class='post_img'><img src='".$row['url']."' alt='image'></div>";
+      echo "<div class='post_img'><img src='".$row['url']."' alt='image' class='post_image'></div>";
       echo "<div class='bottom_bar'>";
       //like button
       include 'sql2.php';
@@ -32,12 +32,12 @@
         $user_like++;
       }
       if($user_like>0){
-        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<form method='post' class='form_bottom'><input type='hidden' value=".$post_id." name='id'>";
         echo "<input type='hidden' value=".$i." name='post'>";
         echo "<br><button type='submit' formaction='unlike_verify.php'>Liked</button>".$num_likes."</form>";
       }
       else{
-        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<form method='post' class='form_bottom'><input type='hidden' value=".$post_id." name='id'>";
         echo "<input type='hidden' value=".$i." name='post'>";
         echo "<br><button type='submit' formaction='like_verify.php'>Like</button>".$num_likes."</form>";
       }
@@ -70,12 +70,12 @@
         $retweet++;
       }
         if($retweet>0){
-        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<form method='post' class='form_bottom'><input type='hidden' value=".$post_id." name='id'>";
         echo "<input type='hidden' value=".$i." name='post'>";
         echo "<br><button type='submit' formaction='undo_retweet_verify.php'>Undo Retweet</button></form>";
       }
       else{
-        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<form method='post' class='form_bottom'><input type='hidden' value=".$post_id." name='id'>";
         echo "<input type='hidden' value=".$i." name='post'>";
         echo "<br><button type='submit' formaction='retweet_verify.php'>Retweet</button></form>";
       }
@@ -88,12 +88,12 @@
         $pin++;
       }
         if($pin>0){
-        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<form method='post' class='form_bottom'><input type='hidden' value=".$post_id." name='id'>";
         echo "<input type='hidden' value=".$i." name='post'>";
         echo "<br><button type='submit' formaction='unpin_verify.php'>Unpin Post</button></form>";
       }
       else{
-        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<form method='post' class='form_bottom'><input type='hidden' value=".$post_id." name='id'>";
         echo "<input type='hidden' value=".$i." name='post'>";
         echo "<br><button type='submit' formaction='pin_verify.php'>Pin Post</button></form>";
       }
@@ -120,12 +120,12 @@
         $user_like++;
       }
       if($user_like>0){
-        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<form method='post' class='form_bottom'><input type='hidden' value=".$post_id." name='id'>";
         echo "<input type='hidden' value=".$i." name='post'>";
         echo "<br><button type='submit' formaction='unlike_verify.php'>Liked</button>".$num_likes."</form>";
       }
       else{
-        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<form method='post' class='form_bottom'><input type='hidden' value=".$post_id." name='id'>";
         echo "<input type='hidden' value=".$i." name='post'>";
         echo "<br><button type='submit' formaction='like_verify.php'>Like</button>".$num_likes."</form>";
       }
@@ -158,12 +158,12 @@
         $retweet++;
       }
         if($retweet>0){
-        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<form method='post' class='form_bottom'><input type='hidden' value=".$post_id." name='id'>";
         echo "<input type='hidden' value=".$i." name='post'>";
         echo "<br><button type='submit' formaction='undo_retweet_verify.php'>Undo Retweet</button></form>";
       }
       else{
-        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<form method='post' class='form_bottom'><input type='hidden' value=".$post_id." name='id'>";
         echo "<input type='hidden' value=".$i." name='post'>";
         echo "<br><button type='submit' formaction='retweet_verify.php'>Retweet</button></form>";
       }
@@ -176,12 +176,12 @@
         $pin++;
       }
         if($pin>0){
-        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<form method='post' class='form_bottom'><input type='hidden' value=".$post_id." name='id'>";
         echo "<input type='hidden' value=".$i." name='post'>";
         echo "<br><button type='submit' formaction='unpin_verify.php'>Unpin Post</button></form>";
       }
       else{
-        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<form method='post' class='form_bottom'><input type='hidden' value=".$post_id." name='id'>";
         echo "<input type='hidden' value=".$i." name='post'>";
         echo "<br><button type='submit' formaction='pin_verify.php'>Pin Post</button></form>";
       }

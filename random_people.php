@@ -1,3 +1,12 @@
+<div class="search">
+  <div class='searchbardiv'>
+  <form class="searchbar" action="search.php" method="post">
+    <input type="text" name="search" value="" placeholder="Search" required class='search_people'>
+    <input type="submit" name="submit" value="🔍">
+  </form>
+</div>
+</div>
+
 <?php
 echo "<div class='random_users_display'>";
   if (session_status() == PHP_SESSION_NONE) {
@@ -9,8 +18,8 @@ echo "<div class='random_users_display'>";
   $data = $stmt->fetchAll();
   foreach ($data as $row) {
     echo "<div class='user_random'>";
-    echo "<img src='".$row['avatar']."' alt='avatar'>";
-    echo "<p>".$row['name']." <a href=profile.php?id=".$row['id'].">@".$row['username']."</a></p>";
+    echo "<img src='".$row['avatar']."' alt='avatar' class='randomuser_slika'>";
+    echo "".$row['name']." <a href=profile.php?id=".$row['id'].">@".$row['username']."</a>";
     echo "</div>";
   }
   echo "</div>";

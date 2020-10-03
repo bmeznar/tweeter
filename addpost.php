@@ -1,6 +1,6 @@
 <div class="new_post">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    ADD POST
+  <button type="button" id="dodaj_post" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <img src="uploads/write_post_index.png" alt="add_post" class="addpost_slika">
   </button>
 
   <div class='modal fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
