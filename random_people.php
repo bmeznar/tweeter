@@ -1,4 +1,5 @@
 <?php
+echo "<div class='random_users_display'>";
   if (session_status() == PHP_SESSION_NONE) {
     session_start();
   }
@@ -12,4 +13,5 @@
     echo "<p>".$row['name']." <a href=profile.php?id=".$row['id'].">@".$row['username']."</a></p>";
     echo "</div>";
   }
+  echo "</div>";
 ?>

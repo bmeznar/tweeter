@@ -1,5 +1,6 @@
 <?php
   //session_start();
+  echo "<div class='all_posts'>";
   include 'sql.php';
   $stmt = $pdo->prepare("SELECT u.name AS name,u.username AS username,u.id AS user_id,p.date AS pdate,p.description AS description, i.url AS url,COUNT(l.id) AS likes,p.id AS pid,l.user_id AS liked_user
   FROM posts AS p INNER JOIN users AS u ON u.id=p.user_id
@@ -190,4 +191,5 @@
     $i++;
   }
   $pdo=null;
+  echo "</div>";
 ?>
