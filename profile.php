@@ -8,6 +8,7 @@
     <?php include 'header.php';
         include 'sql.php';
         //session_start();
+        $_SESSION['original']=basename(__FILE__);
         echo "<div class='profile'>";
         $id=$_GET['id'];
         $stmt = $pdo->query("SELECT * FROM users WHERE id=$id");

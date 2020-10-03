@@ -7,5 +7,5 @@
   $stmt = $pdo->prepare($query);
   $stmt->execute([$user,$following]);
   $pdo=null;
-  header("Location:index.php");
+  header("Location:profile.php?id=".$following);
 ?>

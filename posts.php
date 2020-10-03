@@ -17,7 +17,7 @@
       echo "<h3 class='name'>".$row['name']."</h3>";
       echo "<h4 class='username'><a href='profile.php?id=".$row['user_id']."'>@".$row['username']."</a></h4>";
       echo "<h5 class='date'>".date('d-m-Y H:i',strtotime($row['pdate']))."</h5>";
-      echo "<a href='post_display.php?id=".$row['pid']."'>More</a>".$row['pid'];
+      echo "<a href='post_display.php?id=".$row['pid']."'>More</a>";
       echo "<p class='description'>".$row['description']."</p>";
       echo "<div class='post_img'><img src='".$row['url']."' alt='image'></div>";
       echo "<div class='bottom_bar'>";
@@ -43,7 +43,7 @@
       //comment button
       echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal-".$i."'>Comments</button>";
       //comment modal
-      
+
       echo "<div class='modal' id='myModal-".$i."'>";
       echo "<div class='modal-dialog'>";
       echo "<div class='modal-content'>";

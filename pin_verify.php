@@ -1,8 +1,8 @@
 <?php
-include 'sql.php';
+  include 'sql.php';
   session_start();
   $post=$_POST['id'];
-  $sql = "INSERT INTO retweet (post_id,user_id) VALUES (?,?)";
+  $sql = "INSERT INTO pinned (post_id,user_id) VALUES (?,?)";
   $pdo->prepare($sql)->execute([$post,$_SESSION['id']]);
   if(isset($_SESSION['original'])){
     if($_SESSION['original']=='myprofile.php'){

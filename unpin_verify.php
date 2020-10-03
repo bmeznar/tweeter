@@ -1,9 +1,10 @@
 <?php
-include 'sql.php';
+  include 'sql.php';
   session_start();
   $post=$_POST['id'];
-  $sql = "INSERT INTO retweet (post_id,user_id) VALUES (?,?)";
-  $pdo->prepare($sql)->execute([$post,$_SESSION['id']]);
+  $stmt = $pdo->prepare("DELETE FROM pinned WHERE post_id=? AND user_id=?");
+  $stmt->execute([$post,$_SESSION['id']]);
+  $deleted = $stmt->rowCount();
   if(isset($_SESSION['original'])){
     if($_SESSION['original']=='myprofile.php'){
       $_SESSION['original']=null;
@@ -17,4 +18,4 @@ include 'sql.php';
   else{
       header("Location:index.php#post".$_POST['post']);
   }
- ?>
+?>
