@@ -209,29 +209,6 @@
             echo "<br><a href='delete_post_verify.php?id=".$post_id."'>Delete Post</a></div><br>";
             echo "</div></div>";
           }
-          /*if(isset($row['url'])){
-            echo "<div class='posts' style='border:1px solid black'>";
-            echo "<h3 class='name'>".$row['name']."</h3>";
-            echo "<h5 class='username'>@".$row['username']."</h4>";
-            echo "<h5 class='date'>".date('d-m-Y H:i',strtotime($row['pdate']))."</h5><br>";
-            echo "<p class='description'>".$row['description']."</p>";
-            echo "<div class='post_img'><img src='".$row['url']."' alt='image'></div>";
-            //LIKE
-            echo "<div class='bottom_bar'><a href='like.php'>Like</a>".$row['likes'];
-            echo "<br><a href='delete_post_verify.php?id=".$row['pid']."'>Delete Post</a></div><br>";
-            echo "</div></div><br>";
-          }
-          else{
-            echo "<div class='posts' style='border:1px solid black'>";
-            echo "<h3 class='name'>".$row['name']."</h3>";
-            echo "<h5 class='username'>@".$row['username']."</h4>";
-            echo "<h5 class='date'>".date('d-m-Y H:i',strtotime($row['pdate']))."</h5><br>";
-            echo "<p class='description'>".$row['description']."</p>";
-            //LIKE
-            echo "<div class='bottom_bar'><a href='like.php'>Like</a>".$row['likes'];
-            echo "<br><a href='delete_post_verify.php?id=".$row['pid']."'>Delete Post</a></div><br>";
-            echo "</div></div><br>";
-          }*/
         }
         $pdo=null;
         echo "</div>";

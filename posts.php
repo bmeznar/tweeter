@@ -79,6 +79,23 @@
         echo "<br><button type='submit' formaction='retweet_verify.php'>Retweet</button></form>";
       }
       //pin
+      $stmt = $pdo2->prepare("SELECT * FROM pinned WHERE user_id=:user_id AND post_id=:post_id");
+      $stmt->execute(['user_id'=>$_SESSION['id'],'post_id'=>$post_id]);
+      $data = $stmt->fetchAll();
+      $pin=0;
+      foreach ($data as $row) {
+        $pin++;
+      }
+        if($pin>0){
+        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<input type='hidden' value=".$i." name='post'>";
+        echo "<br><button type='submit' formaction='unpin_verify.php'>Unpin Post</button></form>";
+      }
+      else{
+        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<input type='hidden' value=".$i." name='post'>";
+        echo "<br><button type='submit' formaction='pin_verify.php'>Pin Post</button></form>";
+      }
 
       echo "</div></div>";
     }
@@ -150,6 +167,23 @@
         echo "<br><button type='submit' formaction='retweet_verify.php'>Retweet</button></form>";
       }
       //pin
+      $stmt = $pdo2->prepare("SELECT * FROM pinned WHERE user_id=:user_id AND post_id=:post_id");
+      $stmt->execute(['user_id'=>$_SESSION['id'],'post_id'=>$post_id]);
+      $data = $stmt->fetchAll();
+      $pin=0;
+      foreach ($data as $row) {
+        $pin++;
+      }
+        if($pin>0){
+        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<input type='hidden' value=".$i." name='post'>";
+        echo "<br><button type='submit' formaction='unpin_verify.php'>Unpin Post</button></form>";
+      }
+      else{
+        echo "<form method='post'><input type='hidden' value=".$post_id." name='id'>";
+        echo "<input type='hidden' value=".$i." name='post'>";
+        echo "<br><button type='submit' formaction='pin_verify.php'>Pin Post</button></form>";
+      }
 
       echo "</div></div>";
     }
