@@ -4,6 +4,11 @@
     grid-template-columns: 15% 570px auto;
     grid-template-rows: 10vh 90vh;
   }
+  .post_user{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
   .avatar{
     width:50px;
     height:50px;
@@ -74,6 +79,10 @@
   .posts{
     padding-bottom:20px;
   }
+  .form_bottom{
+    display: flex;
+    align-items: center;
+  }
 
   .navigacija{
     display: block;
@@ -119,12 +128,16 @@
 }
 
 
-@media screen and (min-width: 1005px) and (max-width:1099px){
+@media screen and (min-width: 1005px) and (max-width:1100px){
   body{
     display:grid;
     grid-template-columns: 15% 570px auto;
     grid-template-rows: 10vh 90vh;
   }
+  .post_user{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;}
   .avatar{
     width:50px;
     height:50px;
@@ -172,6 +185,10 @@
     display: inline-block;
     margin-left: 10px;
     margin-right: 10px;
+    align-items: center;
+  }
+  .form_bottom{
+    display: flex;
     align-items: center;
   }
   .bottom_bar{
@@ -239,12 +256,16 @@
   }
 }
 
-@media screen and (min-width: 680px) and (max-width:1004px){
+@media screen and (min-width: 680px) and (max-width:1005px){
   body{
     display:grid;
     grid-template-columns: 15% 570px auto;
     grid-template-rows: 10vh 90vh;
   }
+  .post_user{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;}
   .avatar{
     width:50px;
     height:50px;
@@ -299,6 +320,10 @@
     text-align: center;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+  .form_bottom{
+    display: flex;
     align-items: center;
   }
   .post_image{
@@ -360,12 +385,16 @@
   }
 }
 
-@media screen and (max-width:679px){
+@media screen and (max-width:680px){
   body{
     display:grid;
     grid-template-columns: auto;
     grid-template-rows: 10vh 80vh 10vh;
   }
+  .post_user{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;}
   .avatar{
     width:50px;
     height:50px;
@@ -374,7 +403,6 @@
   .link{
     widows: 40px;
     height:40px;
-    margin-bottom: 20px;
   }
   .addpost_slika{
     width:30px;
@@ -423,16 +451,24 @@
   .navigacija br{
     display: none;
   }
+  .form_bottom{
+    display: flex;
+    align-items: center;
+  }
 
   .navigacija{
     grid-row-start: 3;
     grid-row-end: 4;
     display: inline-block;
     border-top: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .loged_user{
     grid-row-start: 1;
     grid-row-end: 2;
+    border-bottom: 1px solid grey;
   }
   .all_posts{
     overflow-y:scroll;
