@@ -12,17 +12,24 @@
   .link{
     widows: 40px;
     height:40px;
+    margin-bottom: 20px;
   }
   .addpost_slika{
     width:25px;
     height:25px;
   }
+  .random_users_display{
+    padding-left: 20px;
+  }
   #dodaj_post{
     border-radius: 50%;
     position:absolute;
     bottom:0;
+    margin-bottom: 30px;
+    margin-left: -50px;
   }
   .searchbardiv{
+    padding-left: 20px;
     vertical-align: middle;
     position:relative;
     width: 60%;
@@ -64,6 +71,9 @@
   ::-webkit-scrollbar {
     display: none;
   }
+  .posts{
+    padding-bottom:20px;
+  }
 
   .navigacija{
     display: block;
@@ -73,6 +83,7 @@
     grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 2;
+    text-align: right;
   }
   .loged_user{
     padding-left:5px;
@@ -83,6 +94,7 @@
     grid-column-start: 2;
     grid-column-end: 3;
     border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
   }
   .all_posts{
     overflow-y:scroll;
@@ -103,5 +115,335 @@
     grid-row-end: 3;
     grid-column-start: 3;
     grid-column-end: 4;
+  }
+}
+
+
+@media screen and (min-width: 1005px) and (max-width:1099px){
+  body{
+    display:grid;
+    grid-template-columns: 15% 570px auto;
+    grid-template-rows: 10vh 90vh;
+  }
+  .avatar{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+  }
+  .link{
+    widows: 40px;
+    height:40px;
+    margin-bottom: 20px;
+  }
+  .addpost_slika{
+    width:25px;
+    height:25px;
+  }
+  .random_users_display{
+    padding-left: 20px;
+  }
+  #dodaj_post{
+    border-radius: 50%;
+    position:absolute;
+    bottom:0;
+    margin-bottom: 30px;
+    margin-left: -50px;
+  }
+  .searchbardiv{
+    padding-left: 20px;
+    vertical-align: middle;
+    position:relative;
+    width: 90%;
+    height: 100%;
+    top:25%;
+  }
+  input[type=text]{
+    width:85%;
+  }
+  input[type=submit]{
+    position: absolute;
+  }
+  .randomuser_slika{
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  .form_bottom{
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-items: center;
+  }
+  .bottom_bar{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .post_image{
+    width:90%;
+    height:400px;
+    margin:auto;
+    object-fit: contain;
+  }
+  .post_img{
+    text-align: center;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .posts{
+    padding-bottom:20px;
+  }
+
+  .navigacija{
+    display: block;
+    border-right: 1px solid grey;
+    padding-right: 10px;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    text-align: right;
+  }
+  .loged_user{
+    padding-left:5px;
+    padding-top: 5px;
+    font-size: 20px;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+  }
+  .all_posts{
+    overflow-y:scroll;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    width:100%;
+  }
+  .search{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+  .random_people{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+}
+
+@media screen and (min-width: 680px) and (max-width:1004px){
+  body{
+    display:grid;
+    grid-template-columns: 15% 570px auto;
+    grid-template-rows: 10vh 90vh;
+  }
+  .avatar{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+  }
+  .link{
+    widows: 40px;
+    height:40px;
+    margin-bottom: 20px;
+  }
+  .addpost_slika{
+    width:25px;
+    height:25px;
+  }
+  .random_users_display{
+    display: none;
+  }
+  #dodaj_post{
+    border-radius: 50%;
+    position:absolute;
+    bottom:0;
+    margin-bottom: 30px;
+    margin-left: -50px;
+  }
+  .searchbardiv{
+    padding-left: 20px;
+    vertical-align: middle;
+    position:relative;
+    width: 90%;
+    height: 100%;
+    top:25%;
+    display: none;
+  }
+  input[type=text]{
+    width:85%;
+  }
+  input[type=submit]{
+    position: absolute;
+  }
+  .randomuser_slika{
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  .form_bottom{
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-items: center;
+  }
+  .bottom_bar{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .post_image{
+    width:90%;
+    height:400px;
+    margin:auto;
+    object-fit: contain;
+  }
+  .post_img{
+    text-align: center;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .posts{
+    padding-bottom:20px;
+  }
+
+  .navigacija{
+    display: block;
+    border-right: 1px solid grey;
+    padding-right: 10px;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    text-align: right;
+  }
+  .loged_user{
+    padding-left:5px;
+    padding-top: 5px;
+    font-size: 20px;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+  }
+  .all_posts{
+    overflow-y:scroll;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    width:100%;
+  }
+  .search{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+  .random_people{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+}
+
+@media screen and (max-width:679px){
+  body{
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: 10vh 80vh 10vh;
+  }
+  .avatar{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+  }
+  .link{
+    widows: 40px;
+    height:40px;
+    margin-bottom: 20px;
+  }
+  .addpost_slika{
+    width:30px;
+    height:30px;
+  }
+  .random_users_display{
+    display: none;
+  }
+  #dodaj_post{
+    border-radius: 50%;
+    position:absolute;
+    bottom:0;
+    margin-bottom: 100px;
+    right: 10px;
+  }
+  .searchbardiv{
+    display: none;
+  }
+  .form_bottom{
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-items: center;
+  }
+  .bottom_bar{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .post_image{
+    width:90%;
+    height:200px;
+    margin:auto;
+    object-fit: contain;
+  }
+  .post_img{
+    text-align: center;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .posts{
+    padding-bottom:20px;
+  }
+  .navigacija br{
+    display: none;
+  }
+
+  .navigacija{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    display: inline-block;
+    border-top: 1px solid grey;
+  }
+  .loged_user{
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .all_posts{
+    overflow-y:scroll;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width:100%;
+  }
+  .search{
+    display:none;
+  }
+  .random_people{
+    display: none;
   }
 }

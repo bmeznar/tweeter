@@ -2,7 +2,7 @@
   <div class='searchbardiv'>
   <form class="searchbar" action="search.php" method="post">
     <input type="text" name="search" value="" placeholder="Search" required class='search_people'>
-    <input type="submit" name="submit" value="🔍">
+    <input type="submit" name="submit" value="🔍" class='search_people'>
   </form>
 </div>
 </div>
