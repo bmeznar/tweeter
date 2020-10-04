@@ -2,11 +2,9 @@
   //session_start();
   echo "<div class='all_posts'>";
   include 'sql.php';
-  $_SESSION['original']=null;
   $stmt = $pdo->prepare("SELECT u.avatar AS avatar, u.name AS name,u.username AS username,u.id AS user_id,p.date AS pdate,p.description AS description, i.url AS url,COUNT(l.id) AS likes,p.id AS pid,l.user_id AS liked_user
-  FROM posts AS p INNER JOIN users AS u ON u.id=p.user_id
-  INNER JOIN following AS f ON f.follower_id=u.id LEFT JOIN images AS i ON i.post_id=p.id
-  LEFT JOIN likes AS l ON l.post_id=p.id WHERE f.user_id=:id GROUP BY p.id ORDER BY date DESC");
+  FROM posts AS p INNER JOIN users AS u ON u.id=p.user_id LEFT JOIN images AS i ON i.post_id=p.id
+  LEFT JOIN likes AS l ON l.post_id=p.id INNER JOIN pinned AS pin ON pin.post_id=p.id WHERE pin.user_id=:id GROUP BY p.id ORDER BY date DESC");
   $stmt->execute(['id'=>$_SESSION['id']]);
   $data = $stmt->fetchAll();
     $i=1;

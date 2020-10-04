@@ -1,0 +1,143 @@
+.update_status_success{
+  color:green;
+}
+.update_status_fail{
+  color: red;
+}
+@media screen and (min-width: 680px){
+  body{
+    display:grid;
+    grid-template-columns: 15% 570px auto;
+    grid-template-rows: 10vh 90vh;
+  }
+  .post_user{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  .avatar{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+  }
+  .link{
+    widows: 40px;
+    height:40px;
+    margin-bottom: 20px;
+  }
+  .addpost_slika{
+    width:25px;
+    height:25px;
+  }
+  #dodaj_post{
+    border-radius: 50%;
+    position:absolute;
+    bottom:0;
+    margin-bottom: 30px;
+    margin-left: -50px;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  input[type=text],input[type=password],input[type=email]{
+    width:70%;
+    text-align: center;
+  }
+
+  .navigacija{
+    display: block;
+    border-right: 1px solid grey;
+    padding-right: 10px;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    text-align: right;
+  }
+  .loged_user{
+    padding-left:5px;
+    padding-top: 5px;
+    font-size: 20px;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+  }
+  .profile_edit{
+    overflow-y:scroll;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    width:100%;
+    border-right: 1px solid grey;
+    text-align: center;
+  }
+  .search{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+}
+
+
+
+@media screen and (max-width:680px){
+  body{
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: 10vh 80vh 10vh;
+  }
+  .avatar{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+  }
+  .link{
+    widows: 40px;
+    height:40px;
+  }
+  #dodaj_post{
+    border-radius: 50%;
+    position:absolute;
+    bottom:0;
+    margin-bottom: 100px;
+    right: 10px;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .navigacija br{
+    display: none;
+  }
+  .addpost_slika{
+    width:30px;
+    height: 30px;
+  }
+
+  .navigacija{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    display: inline-block;
+    border-top: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .loged_user{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    border-bottom: 1px solid grey;
+  }
+  .profile_edit{
+    overflow-y:scroll;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width:100%;
+    border-right: 1px solid grey;
+    text-align: center;
+  }
+}

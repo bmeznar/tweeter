@@ -125,6 +125,9 @@
     grid-column-start: 3;
     grid-column-end: 4;
   }
+  .all_posts{
+    border-right: 1px solid grey;
+  }
 }
 
 
@@ -147,6 +150,9 @@
     widows: 40px;
     height:40px;
     margin-bottom: 20px;
+  }
+  .all_posts{
+    border-right: 1px solid grey;
   }
   .addpost_slika{
     width:25px;
@@ -261,6 +267,9 @@
     display:grid;
     grid-template-columns: 15% 570px auto;
     grid-template-rows: 10vh 90vh;
+  }
+  .all_posts{
+    border-right: 1px solid grey;
   }
   .post_user{
     width: 30px;
