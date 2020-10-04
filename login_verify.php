@@ -21,11 +21,12 @@
         die();
         }
         else{
-          echo "napaka";
+          $_SESSION['register_feedback']="<div class='register_fail'>Wrong login details</div>";
+          header("Location: login.php");
         }
   }
   else{
-    echo "Napaka.";
+    $_SESSION['register_feedback']="<div class='register_fail'>Wrong login details</div>";
     header("Location: login.php");
   }
 ?>

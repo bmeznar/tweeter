@@ -37,10 +37,12 @@ if (!empty($name) && !empty($email)
       header("Location: index.php");
     }
     else{
+      $_SESSION['register_feedback']="<div class='register_fail'>Username or email already exists</div>";
       header("Location: registration.php");
     }
 }
 else {
+    $_SESSION['register_feedback']="<div class='register_fail'>Please enter all information</div>";
     header("Location: registration.php");
 }
 ?>

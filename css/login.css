@@ -1,0 +1,83 @@
+.register_fail{
+  color:red;
+}
+div{
+  text-align: center;
+}
+@media screen and (min-width: 960px){
+  .login_box{
+    margin:auto;
+    margin-top: 30px;
+    border: 2px solid black;
+    width:30%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  form{
+    text-align: center;
+  }
+  a{
+    border:1px solid grey;
+    border-radius: 10px;
+    height:30px;
+    width: 200px;
+    background-color: blue;
+    color: white;
+  }
+  input[type=text],input[type=password],input[type=email]{
+    width:90%;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 680px) and (max-width:960px){
+  .login_box{
+    margin:auto;
+    margin-top: 30px;
+    border: 2px solid black;
+    width:60%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  form{
+    text-align: center;
+  }
+  a{
+    border:1px solid grey;
+    border-radius: 10px;
+    height:30px;
+    width: 200px;
+    background-color: blue;
+    color: white;
+  }
+  input[type=text],input[type=password],input[type=email]{
+    width:90%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:680px){
+  .login_box{
+    margin:auto;
+    margin-top: 30px;
+    border: 2px solid black;
+    width:90%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  form{
+    text-align: center;
+  }
+  a{
+    border:1px solid grey;
+    border-radius: 10px;
+    height:30px;
+    width: 200px;
+    background-color: blue;
+    color: white;
+  }
+  input[type=text],input[type=password],input[type=email]{
+    width:90%;
+    text-align: center;
+  }
+}
