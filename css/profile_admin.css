@@ -1,0 +1,49 @@
+.profile{
+  text-align: center;
+}
+@media screen and (min-width:680px){
+  .user_main_avatar{
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  .user_avatar{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+  .post_img img{
+    width:90%;
+    height:400px;
+    margin:auto;
+    object-fit: contain;
+  }
+  .posts{
+    text-align: center;
+    width:60%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width:680px){
+  .user_main_avatar{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .user_avatar{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+  .post_img img{
+    width:90%;
+    height:400px;
+    margin:auto;
+    object-fit: contain;
+  }
+  .posts{
+    text-align: center;
+    width:90%;
+    margin: 0 auto;
+  }
+}

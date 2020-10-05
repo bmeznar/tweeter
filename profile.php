@@ -133,7 +133,7 @@
               echo "<br><button type='submit' formaction='pin_verify.php'>Pin Post</button></form>";
             }
 
-            echo "<br><a href='delete_post_verify.php?id=".$post_id."'>Delete Post</a></div><br>";
+
             echo "</div>";
           }
 
@@ -222,7 +222,6 @@
               echo "<br><button type='submit' formaction='pin_verify.php'>Pin Post</button></form>";
             }
 
-            echo "<br><a href='delete_post_verify.php?id=".$post_id."'>Delete Post</a></div><br>";
             echo "</div>";
           }
         }

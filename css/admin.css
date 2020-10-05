@@ -1,0 +1,51 @@
+.posts{
+  border:1px solid black;
+}
+.user_avatar{
+  width:30px;
+  height: 30px;
+  border-radius: 50%
+}
+.post_image{
+  width:90%;
+  height:400px;
+  margin:auto;
+  object-fit: contain;
+}
+@media screen and (min-width: 680px){
+  .posts{
+    width:60%;
+    margin: 0 auto;
+  }
+  body{
+    text-align: center;
+  }
+  .users{
+    border:1px solid grey;
+    width:40%;
+    margin: 0 auto;
+  }
+  .results{
+    overflow-y: scroll;
+    height: 70vh;
+  }
+}
+
+@media screen and (max-width: 680px){
+  .posts{
+    width:90%;
+    margin: 0 auto;
+  }
+  body{
+    text-align: center;
+  }
+  .users{
+    border:1px solid grey;
+    width:80%;
+    margin: 0 auto;
+  }
+  .results{
+    overflow-y: scroll;
+    height: 70vh;
+  }
+}

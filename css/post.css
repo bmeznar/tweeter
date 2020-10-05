@@ -1,0 +1,94 @@
+@media screen and (min-width:680px){
+body{
+  display:grid;
+  grid-template-columns: 15% 570px auto;
+  grid-template-rows: 10vh 90vh;
+}
+  .user_main{
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  .avatar{
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  .logged_user{
+    margin:auto;
+  }}
+  .link{
+    widows: 40px;
+    height:40px;
+    margin-bottom: 20px;
+  }
+  .addpost_slika{
+    width:25px;
+    height:25px;
+  }
+  #dodaj_post{
+    border-radius: 50%;
+    position:absolute;
+    bottom:0;
+    margin-bottom: 30px;
+    margin-left: -50px;
+  }
+  .post_img{
+    text-align: center;
+  }
+  img{
+    width:90%;
+    height:400px;
+    margin:auto;
+    object-fit:contain;
+  }
+  .bottom_bar{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navigacija{
+    display: block;
+    border-right: 1px solid grey;
+    padding-right: 10px;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    text-align: right;
+  }
+  .loged_user{
+    padding-left:5px;
+    padding-top: 5px;
+    font-size: 20px;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+  }
+  .posts{
+    overflow-y:scroll;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    width:100%;
+  }
+  .all_comments{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    overflow-y:scroll;
+  }
+  .comment{
+    border:1px solid grey;
+  }
+}

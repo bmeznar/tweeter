@@ -2,7 +2,7 @@
   session_start();
   include 'sql.php';
 
-  if(isset($_POST['slika'])){
+  if(isset($_FILES['slika'])){
     $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["slika"]["name"]);
     $uploadOk = 1;
@@ -46,7 +46,7 @@
         $lastId = $pdo->lastInsertId();
         $stmt= $pdo->prepare("INSERT INTO images (url,post_id) VALUES (?,?)");
         $stmt->execute([$target_file, $lastId]);
-        header('Location:index.php');
+        //header('Location:index.php');
     } else {
       echo "Sorry, there was an error uploading your file.";
     }
@@ -56,6 +56,6 @@
   else{
     $stmt= $pdo->prepare("INSERT INTO posts (description,user_id) VALUES (?,?)");
     $stmt->execute([$_POST['description'], $_SESSION['id']]);
-    header('Location:index.php');
+    //header('Location:index.php');
   }
  ?>
